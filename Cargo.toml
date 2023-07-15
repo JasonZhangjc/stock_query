@@ -1,0 +1,39 @@
+[package]
+name = "stock"
+version = "1.4.0"
+edition = "2021"
+
+[dependencies]
+
+# TUI is the Text-based User Interface for this APP.
+tui = { version = "0.19", default-features = false, features = ['crossterm', 'serde'] }
+
+# crossterm provides clearing, event (input) handling, styling, cursor movement, and terminal actions for both Windows and UNIX systems.
+# crossterm is compatible with Windows
+# performance is a bit worse than termion
+# in order to use Mouse, make sure the version is >= 0.23
+crossterm = { version = "0.26.1", features = [ "serde" ] }
+
+# serde is a framework for serializing and deserializing Rust data structures efficiently and generically.
+serde = {version = "1.0", features = ["derive"] }
+
+# serde_json is a JSON serialization file format.
+serde_json = "1.0"
+
+# data and time for rust
+chrono = "0.4"
+
+# calculate the text width in tui
+unicode-width = "0.1"
+
+# reqwest is too large: 3Mb
+# ureq: 2Mb
+# http_req: 300Kb
+# http_req is a simple HTTP client with built-in HTTPS support. 
+# Currently it’s in heavy development and may frequently change.
+http_req = "0.9"
+
+# A tiny low-level library that provides platform-specific standard locations of directories for config, 
+# cache and other data on Linux, Windows, macOS and Redox by leveraging the mechanisms defined by the XDG base/user directory specifications 
+# on Linux, the Known Folder API on Windows, and the Standard Directory guidelines on macOS.
+dirs-next = "2.0"
